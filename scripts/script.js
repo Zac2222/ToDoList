@@ -59,50 +59,65 @@ function createElement(elementToCreate, style) {
   }
   
   function createItems(item, injectArea) { 
+    let listItems = document.querySelectorAll('.list-group-item');
+    let listNum = listItems.length > 0 ? parseInt(listItems[listItems.length - 1].innerText.split('.')[0]) + 1 : 1;
+
     let row = createElement('div', 'row'); 
       
     let div1 = createElement('div', 'col-1');
-       
+     
     let div2 = createElement('div', 'formcheck pt-2 mx-4');
         
     let checkbox = createElement('input', 'form-check-input');
-    checkbox.setAttribute('type','checkbox'); 
-    checkbox.addEventListener('click', function(e){
-       
-      if(e.target.checked){ 
-        e.target.parentNode.parentNode.nextSibling.classList.add('strike'); 
-      }
-      else {
-        e.target.parentNode.parentNode.nextSibling.classList.remove('strike');
-      }
-    });    
-    div1.appendChild(div2); 
-    div2.appendChild(checkbox);
-  
+        checkbox.setAttribute('type','checkbox'); 
+        checkbox.addEventListener('click', function(e){
+           
+            if(e.target.checked){ 
+                e.target.parentNode.parentNode.nextSibling.classList.add('strike'); 
+            }
+            else
+            {
+                e.target.parentNode.parentNode.nextSibling.classList.remove('strike');
+            }
+        });    
+        div1.appendChild(div2); 
+        div2.appendChild(checkbox);
+    
+
     let div3 = createElement('div', 'col-10');
        
     let olTag = createElement('ol', 'list-group');
      
     let liTag = createElement('li', 'list-group-item list-group-item-primary'); 
-    liTag.innerText = listNum + '. ' + item;
-    liTag.contentEditable = true; 
+        liTag.innerText = listNum + '. ' + item;
+        liTag.contentEditable = true; 
     
-    div3.appendChild(olTag);
-    olTag.appendChild(liTag);
+        div3.appendChild(olTag);
+        olTag.appendChild(liTag);
     
+
     let div4 = createElement('div', 'col-1 pt-2');
        
     let iTag = createElement('i', 'fa-sharp fa-solid fa-trash');
-    iTag.setAttribute('style','color: #e11414');
-    div4.appendChild(iTag);
-    iTag.addEventListener('click', function(e){
-      this.parentNode.parentNode.remove();
-    });
-  
-    row.appendChild(div1);
-    row.appendChild(div3);
-    row.appendChild(div4);
-    injectArea.appendChild(row);
-  
-    listNum++;
+        iTag.setAttribute('style','color: #e11414');
+        div4.appendChild(iTag);
+        iTag.addEventListener('click', function(e){
+            this.parentNode.parentNode.remove();
+            updateListNumbers();
+        });
+
+    
+        row.appendChild(div1);
+        row.appendChild(div3);
+        row.appendChild(div4);
+        injectArea.appendChild(row);
+
+        updateListNumbers();
+  }
+
+  function updateListNumbers() { //brought to you by chat gbt
+    let items = document.querySelectorAll('.list-group-item');
+    for (let i = 0; i < items.length; i++) {
+      items[i].innerText = (i + 1) + '. ' + items[i].innerText.substr(3);
+    }
   }
