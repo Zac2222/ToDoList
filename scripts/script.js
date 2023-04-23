@@ -39,7 +39,7 @@ function createElement(elementToCreate, style) {
     inputArea.setAttribute('aria-label','Recipient\'s username')
     inputArea.setAttribute('aria-describedby','button-addon2') 
   
-    let btn2 = createElement('button', 'btn btn-outline-warning')
+    let btn2 = createElement('button', 'btn btn-outline-info')
     btn2.setAttribute('type','button');
     btn2.innerText = 'Add Item';
   
@@ -98,8 +98,8 @@ function createElement(elementToCreate, style) {
 
     let div4 = createElement('div', 'col-1 pt-2');
        
-    let iTag = createElement('i', 'fa-sharp fa-solid fa-trash');
-        iTag.setAttribute('style','color: #e11414');
+    let iTag = createElement('i', 'fa-sharp fa-solid fa-ghost');
+        iTag.setAttribute('style','color: blue');
         div4.appendChild(iTag);
         iTag.addEventListener('click', function(e){
             this.parentNode.parentNode.remove();

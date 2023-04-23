@@ -7,10 +7,17 @@ body{
 
 .strike{
     text-decoration: line-through;
-    color: black;
+    color: purple;
 }
 
 .row-space {
     margin-bottom: 10px;
   }
 
+  #btnContainer{
+    background-image: linear-gradient(to bottom left, blueviolet, lightblue);
+  }
+  #createList{
+    background-color: rgb(218, 150, 250);
+    font-size: 30px;
+  }
