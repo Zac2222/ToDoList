@@ -1,0 +1,12 @@
+body{
+    background-color: dimgray;
+}
+*{
+    color: azure;
+}
+
+.strike{
+    text-decoration: line-through;
+    color: black;
+}
+
