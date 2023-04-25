@@ -20,4 +20,6 @@ body{
   #createList{
     background-color: rgb(218, 150, 250);
     font-size: 30px;
+    border-radius: 50%;
+    width: 300px;
   }

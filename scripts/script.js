@@ -116,7 +116,7 @@ function createElement(elementToCreate, style) {
   }
 
   function updateListNumbers() { //brought to you by chat gbt
-    let items = document.querySelectorAll('.list-group-item');
+    let items = document.querySelectorAll('.list-group-item'); //system to keep the numbers in order even after deleting
     for (let i = 0; i < items.length; i++) {
       items[i].innerText = (i + 1) + '. ' + items[i].innerText.substr(3);
     }
