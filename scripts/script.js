@@ -3,7 +3,6 @@ let injectArea = document.getElementById('injectArea');
 let textArea = document.getElementById('textArea');
 let createList = document.getElementById('createList')
 let listNum = 1;
-let inputCount = 0
 let btnContainer = document.getElementById('btnContainer');
 
 
@@ -19,11 +18,6 @@ function createElement(elementToCreate, style)
     return createdElement;
 }
 
-function createElement(elementToCreate, style) {
-    let createdElement = document.createElement(elementToCreate);
-    createdElement.classList = style;
-    return createdElement;
-  }
   
   function createLists() {
 
@@ -50,7 +44,7 @@ function createElement(elementToCreate, style) {
     });
   
     inputGroupDiv.appendChild(inputArea); 
-    inputGroupDiv.appendChild(btn2)
+    inputGroupDiv.appendChild(btn2);
     colAutoDiv.appendChild(inputGroupDiv);
     rowListDiv.appendChild(colAutoDiv);
     rowListDiv.appendChild(injectArea); // Add the new inject area to the row
@@ -59,8 +53,7 @@ function createElement(elementToCreate, style) {
   }
   
   function createItems(item, injectArea) { 
-    let listItems = document.querySelectorAll('.list-group-item');
-    let listNum = listItems.length > 0 ? parseInt(listItems[listItems.length - 1].innerText.split('.')[0]) + 1 : 1;
+    
 
     let row = createElement('div', 'row'); 
       
