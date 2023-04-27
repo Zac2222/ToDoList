@@ -1,4 +1,7 @@
 body{
+    background-image: linear-gradient(to bottom left, blueviolet, lightblue);
+    background-repeat: no-repeat;
+    height: 100vh;
     background-color: dimgray;
 }
 *{
@@ -15,8 +18,10 @@ body{
   }
 
   #btnContainer{
-    background-image: linear-gradient(to bottom left, blueviolet, lightblue);
+    background-image: linear-gradient(to bottom left, lightblue, blueviolet);
+    
   }
+
   #createList{
     background-color: rgb(218, 150, 250);
     font-size: 30px;
